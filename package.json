@@ -7,8 +7,11 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.2",
+    "@next-auth/firebase-adapter": "^0.1.2",
+    "firebase": "^8.7.1",
     "framer-motion": "^4.1.17",
     "next": "latest",
+    "next-auth": "^3.27.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-responsive-carousel": "^3.2.20"
