@@ -5,11 +5,10 @@ import {
   PlusIcon,
   StarIcon,
 } from "@heroicons/react/solid";
-import { motion } from "framer-motion";
 
 function Header() {
   return (
-    <header className="flex items-center px-12 h-20">
+    <header className="flex items-center px-10 md:px-12 h-20">
       <Image src="/images/logo.svg" alt="" width={80} height={80} />
       <div className="hidden ml-10 md:flex items-center space-x-6">
         <a className="header-link group">

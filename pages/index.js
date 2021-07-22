@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Brands from "../components/Brands";
 import Header from "../components/Header";
 import Slider from "../components/Slider";
 
@@ -10,12 +11,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      This is a change I did on mac
-      <main>
-        <Slider />
-        {/* Partners */}
-        <section></section>
-      </main>
+
+      <Slider />
+      <Brands />
+      <section></section>
     </div>
   );
 }
