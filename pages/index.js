@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      This is a change I did on windows
+      This is a change I did on mac
       <main>
         <Slider />
         {/* Partners */}
