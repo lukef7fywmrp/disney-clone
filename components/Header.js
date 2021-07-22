@@ -4,15 +4,15 @@ import {
   SearchIcon,
   PlusIcon,
   StarIcon,
-  FilmIcon,
 } from "@heroicons/react/solid";
+import { motion } from "framer-motion";
 
 function Header() {
   return (
     <header className="flex items-center px-12 h-20">
       <Image src="/images/logo.svg" alt="" width={80} height={80} />
       <div className="hidden ml-10 md:flex items-center space-x-6">
-        <a className="header-link">
+        <a className="header-link group">
           <HomeIcon className="h-4" />
           <span className="uppercase text-sm font-medium">Home</span>
         </a>
@@ -37,7 +37,7 @@ function Header() {
           <span className="uppercase text-sm font-medium">Series</span>
         </a>
       </div>
-      <button className="ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:bg-white hover:text-black">
+      <button className="ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:bg-white hover:text-black transition duration-200">
         Login
       </button>
     </header>

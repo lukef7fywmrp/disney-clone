@@ -10,6 +10,12 @@ export default function Home() {
       </Head>
 
       <Header />
+
+      <main>
+        <Slider />
+        {/* Partners */}
+        <section></section>
+      </main>
     </div>
   );
 }
