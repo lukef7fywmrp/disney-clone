@@ -9,9 +9,8 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header />
-
+      This is a change I did on windows
       <main>
         <Slider />
         {/* Partners */}
