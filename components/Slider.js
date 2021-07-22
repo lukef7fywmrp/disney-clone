@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 
 function Slider() {
   return (
-    <section className="relative">
+    <section className="relative mt-7 shadow-2xl max-w-screen-2xl mx-auto">
       <div />
       <Carousel
         autoPlay
