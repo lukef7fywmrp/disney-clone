@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@layer base {
+  body {
+    @apply bg-[#040714] text-[#f9f9f9] font-body;
+  }
+}
+
+@layer components {
+  .header-link {
+    @apply flex items-center space-x-2 cursor-pointer;
+  }
+}
