@@ -4,7 +4,7 @@ function MovieThumbnail({ result }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
   return (
-    <div className="min-w-[300px] min-h-[150px] rounded-3xl overflow-hidden">
+    <div className="min-w-[300px] min-h-[150px] rounded-md overflow-hidden cursor-pointer">
       <Image
         src={
           `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
@@ -13,6 +13,7 @@ function MovieThumbnail({ result }) {
         width={300}
         height={150}
         objectFit="cover"
+        className="rounded-md"
       />
     </div>
   );
