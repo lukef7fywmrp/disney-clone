@@ -7,11 +7,13 @@ import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import { PlusIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
+import {useState} from "react"
 
 function Movie({ result }) {
   const [session] = useSession();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
+  const [showPlayer, setShowPlayer] = useState(false)
 
   useEffect(() => {
     if (!session) {
@@ -60,7 +62,7 @@ function Movie({ result }) {
                 </span>
               </button>
 
-              <button className="text-xs md:text-base bg-black/30 text-[#f9f9f9] border border-[#f9f9f9] flex items-center justify-center py-2.5 px-6 rounded hover:bg-[#c6c6c6]">
+              <button className="text-xs md:text-base bg-black/30 text-[#f9f9f9] border border-[#f9f9f9] flex items-center justify-center py-2.5 px-6 rounded hover:bg-[#c6c6c6]" onClick={() => }>
                 <img
                   src="/images/play-icon-white.svg"
                   alt=""
