@@ -12,7 +12,7 @@ function Movie({ result }) {
   const [session] = useSession();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
-  const [showPlayer, setShowPlayer] = useState();
+  const [showPlayer, setShowPlayer] = useState(false);
 
   useEffect(() => {
     if (!session) {
@@ -25,7 +25,7 @@ function Movie({ result }) {
   );
 
   return (
-    <div>
+    <div className="relative">
       <Head>
         <title>Disney</title>
         <link rel="icon" href="/favicon.ico" />
@@ -34,7 +34,7 @@ function Movie({ result }) {
       {!session ? (
         <Hero />
       ) : (
-        <section className="relative">
+        <section className="relative z-50">
           <div className="relative min-h-[calc(100vh-72px)]">
             <Image
               src={
@@ -45,7 +45,7 @@ function Movie({ result }) {
               objectFit="cover"
             />
           </div>
-          <div className="absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6">
+          <div className="absolute inset-y-28 md:inset-y-auto md:bottom-10 inset-x-4 md:inset-x-12 space-y-6 z-50">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
               {result.title || result.original_name}
             </h1>
@@ -92,10 +92,22 @@ function Movie({ result }) {
             <h4 className="text-sm md:text-lg max-w-4xl">{result.overview}</h4>
           </div>
 
-          <div className="fixed top-20 left-44 z-50 rounded overflow-hidden">
+          {/* Bg Overlay */}
+          {showPlayer && (
+            <div className="absolute inset-0 bg-black opacity-50 h-full w-full z-50"></div>
+          )}
+
+          <div
+            className={`fixed top-20 left-60  rounded overflow-hidden transition duration-1000 ${
+              showPlayer ? "opacity-100 z-50" : "opacity-0"
+            }`}
+          >
             <div className="flex  items-center justify-between bg-black text-[#f9f9f9] p-3.5">
-              <span>Trailer</span>
-              <div className="cursor-pointer w-8 h-8 flex justify-center items-center rounded-lg opacity-50 hover:opacity-75 hover:bg-[#0F0F0F]" onClick={() => setShowPlayer(false)}>
+              <span className="font-semibold">Play Trailer</span>
+              <div
+                className="cursor-pointer w-8 h-8 flex justify-center items-center rounded-lg opacity-50 hover:opacity-75 hover:bg-[#0F0F0F]"
+                onClick={() => setShowPlayer(false)}
+              >
                 <XIcon className="h-5" />
               </div>
             </div>
@@ -104,6 +116,7 @@ function Movie({ result }) {
               width={1065}
               height={600}
               controls={true}
+              playing={showPlayer}
             />
           </div>
         </section>
