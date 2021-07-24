@@ -2,16 +2,17 @@ import { getSession, useSession } from "next-auth/client";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
-import { PlusIcon } from "@heroicons/react/solid";
+import { PlusIcon, XIcon } from "@heroicons/react/solid";
 import ReactPlayer from "react-player/lazy";
 
 function Movie({ result }) {
   const [session] = useSession();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
+  const [showPlayer, setShowPlayer] = useState();
 
   useEffect(() => {
     if (!session) {
@@ -60,7 +61,10 @@ function Movie({ result }) {
                 </span>
               </button>
 
-              <button className="text-xs md:text-base bg-black/30 text-[#f9f9f9] border border-[#f9f9f9] flex items-center justify-center py-2.5 px-6 rounded hover:bg-[#c6c6c6]">
+              <button
+                className="text-xs md:text-base bg-black/30 text-[#f9f9f9] border border-[#f9f9f9] flex items-center justify-center py-2.5 px-6 rounded hover:bg-[#c6c6c6]"
+                onClick={() => setShowPlayer(true)}
+              >
                 <img
                   src="/images/play-icon-white.svg"
                   alt=""
@@ -87,12 +91,23 @@ function Movie({ result }) {
             </p>
             <h4 className="text-sm md:text-lg max-w-4xl">{result.overview}</h4>
           </div>
+
+          <div className="fixed top-20 left-44 z-50 rounded overflow-hidden">
+            <div className="flex  items-center justify-between bg-black text-[#f9f9f9] p-3.5">
+              <span>Trailer</span>
+              <div className="cursor-pointer w-8 h-8 flex justify-center items-center rounded-lg opacity-50 hover:opacity-75 hover:bg-[#0F0F0F]" onClick={() => setShowPlayer(false)}>
+                <XIcon className="h-5" />
+              </div>
+            </div>
+            <ReactPlayer
+              url={`https://www.youtube.com/watch?v=${result.videos.results[index].key}`}
+              width={1065}
+              height={600}
+              controls={true}
+            />
+          </div>
         </section>
       )}
-
-      <ReactPlayer
-        url={`https://www.youtube.com/watch?v=${result.videos.results[index].key}`}
-      />
     </div>
   );
 }
