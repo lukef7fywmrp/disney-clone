@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import { PlusIcon } from "@heroicons/react/solid";
-import humanizeDuration from "humanize-duration";
 
 function Show({ result }) {
   console.log(result);
@@ -79,7 +78,8 @@ function Show({ result }) {
 
             <p className="text-xs md:text-sm">
               {result.release_date || result.first_air_date} •{" "}
-              {humanizeDuration(result.runtime * 60000)} •{" "}
+              {result.number_of_seasons}{" "}
+              {result.number_of_seasons === 1 ? "Season" : "Seasons"} •{" "}
               {/* {result.genres.map((genre) => genre.name + ", ")} */}
             </p>
             <h4 className="text-sm md:text-lg max-w-4xl">{result.overview}</h4>

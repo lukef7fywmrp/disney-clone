@@ -6,10 +6,9 @@ import { useEffect } from "react";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import { PlusIcon } from "@heroicons/react/solid";
-import humanizeDuration from "humanize-duration";
+import ReactPlayer from "react-player/lazy";
 
 function Movie({ result }) {
-  console.log(result);
   const [session] = useSession();
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   const router = useRouter();
@@ -19,6 +18,10 @@ function Movie({ result }) {
       router.push("/");
     }
   }, []);
+
+  const index = result.videos.results.findIndex(
+    (element) => element.type === "Trailer"
+  );
 
   return (
     <div>
@@ -79,13 +82,17 @@ function Movie({ result }) {
 
             <p className="text-xs md:text-sm">
               {result.release_date || result.first_air_date} •{" "}
-              {humanizeDuration(result.runtime * 60000)} •{" "}
+              {Math.floor(result.runtime / 60)}h {result.runtime % 60}m •{" "}
               {/* {result.genres.map((genre) => genre.name + ", ")} */}
             </p>
             <h4 className="text-sm md:text-lg max-w-4xl">{result.overview}</h4>
           </div>
         </section>
       )}
+
+      <ReactPlayer
+        url={`https://www.youtube.com/watch?v=${result.videos.results[index].key}`}
+      />
     </div>
   );
 }
@@ -97,7 +104,7 @@ export async function getServerSideProps(context) {
   const { id } = context.query;
 
   const request = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US`
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.API_KEY}&language=en-US&append_to_response=videos`
   ).then((response) => response.json());
 
   return {
