@@ -13,7 +13,7 @@ function Header() {
   const router = useRouter();
 
   return (
-    <header className="sticky bg-[#040714] top-0 z-50 flex items-center px-10 md:px-12 h-20">
+    <header className="sticky bg-[#040714] top-0 z-50 flex items-center px-10 md:px-12 h-[72px]">
       <Image
         src="/images/logo.svg"
         alt=""

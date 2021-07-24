@@ -6,10 +6,10 @@ function Brands() {
       <div className="brand group">
         <Image src="/images/disnep.png" layout="fill" objectFit="cover" />
         <video
-          autoplay
+          autoPlay
           loop
-          playsinline
-          className="hidden group-hover:inline rounded-lg"
+          playsInline
+          className="hidden group-hover:inline rounded-lg object-cover"
         >
           <source src="/videos/disney.mp4" type="video/mp4" />
         </video>
@@ -18,10 +18,10 @@ function Brands() {
       <div className="brand group">
         <Image src="/images/pixar.png" layout="fill" objectFit="cover" />
         <video
-          autoplay
+          autoPlay
           loop
-          playsinline
-          className="hidden group-hover:inline rounded-lg"
+          playsInline
+          className="hidden group-hover:inline rounded-lg object-cover"
         >
           <source src="/videos/pixar.mp4" type="video/mp4" />
         </video>
@@ -30,10 +30,10 @@ function Brands() {
       <div className="brand group">
         <Image src="/images/marvel.png" layout="fill" objectFit="cover" />
         <video
-          autoplay
+          autoPlay
           loop
-          playsinline
-          className="hidden group-hover:inline rounded-lg"
+          playsInline
+          className="hidden group-hover:inline rounded-lg object-cover"
         >
           <source src="/videos/marvel.mp4" type="video/mp4" />
         </video>
@@ -42,10 +42,10 @@ function Brands() {
       <div className="brand group">
         <Image src="/images/starwars.png" layout="fill" objectFit="cover" />
         <video
-          autoplay
+          autoPlay
           loop
-          playsinline
-          className="hidden group-hover:inline rounded-lg"
+          playsInline
+          className="hidden group-hover:inline rounded-lg object-cover"
         >
           <source src="/videos/star-wars.mp4" type="video/mp4" />
         </video>
@@ -58,10 +58,10 @@ function Brands() {
           objectFit="cover"
         />
         <video
-          autoplay
+          autoPlay
           loop
-          playsinline
-          className="hidden group-hover:inline rounded-lg"
+          playsInline
+          className="hidden group-hover:inline rounded-lg object-cover"
         >
           <source src="/videos/national-geographic.mp4" type="video/mp4" />
         </video>
