@@ -26,27 +26,27 @@ function Header() {
         <div className="hidden ml-10 md:flex items-center space-x-6">
           <a className="header-link group">
             <HomeIcon className="h-4" />
-            <span className="uppercase text-sm font-medium">Home</span>
+            <span className="span">Home</span>
           </a>
-          <a className="header-link">
+          <a className="header-link group">
             <SearchIcon className="h-4" />
-            <span className="uppercase text-sm font-medium">Search</span>
+            <span className="span">Search</span>
           </a>
-          <a className="header-link">
+          <a className="header-link group">
             <PlusIcon className="h-4" />
-            <span className="uppercase text-sm font-medium">Watchlist</span>
+            <span className="span">Watchlist</span>
           </a>
-          <a className="header-link">
+          <a className="header-link group">
             <StarIcon className="h-4" />
-            <span className="uppercase text-sm font-medium">Originals</span>
+            <span className="span">Originals</span>
           </a>
-          <a className="header-link">
+          <a className="header-link group">
             <img src="/images/movie-icon.svg" alt="" className="h-5" />
-            <span className="uppercase text-sm font-medium">Movies</span>
+            <span className="span">Movies</span>
           </a>
-          <a className="header-link">
+          <a className="header-link group">
             <img src="/images/series-icon.svg" alt="" className="h-5" />
-            <span className="uppercase text-sm font-medium">Series</span>
+            <span className="span">Series</span>
           </a>
         </div>
       )}
