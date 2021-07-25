@@ -89,7 +89,7 @@ function Show({ result }) {
               {result.release_date || result.first_air_date} •{" "}
               {result.number_of_seasons}{" "}
               {result.number_of_seasons === 1 ? "Season" : "Seasons"} •{" "}
-              {/* {result.genres.map((genre) => genre.name + ", ")} */}
+              {result.genres.map((genre) => genre.name + " ")}{" "}
             </p>
             <h4 className="text-sm md:text-lg max-w-4xl">{result.overview}</h4>
           </div>
