@@ -18,7 +18,10 @@ export default function Home({
   return (
     <div>
       <Head>
-        <title>Disney</title>
+        <title>
+          Disney+ | The streaming home of Disney, Pixar, Marvel, Star Wars, Nat
+          Geo and Star
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

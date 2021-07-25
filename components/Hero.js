@@ -1,8 +1,13 @@
+import Head from "next/head";
 import Image from "next/image";
 
 function Hero() {
   return (
     <section className="relative">
+      <Head>
+        <title>Log in | Disney+</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="relative min-h-[calc(100vh-72px)]">
         <Image
           src="/images/hero-background.jpg"
